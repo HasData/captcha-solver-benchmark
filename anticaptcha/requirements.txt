@@ -1,0 +1,2 @@
+anticaptchaofficial==1.0.69
+playwright==1.54.0
