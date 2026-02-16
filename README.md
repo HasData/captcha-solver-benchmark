@@ -159,6 +159,6 @@ Services have costs and rate limits.
 
 ## 🔎 More Resources
 
-* **Full Analysis**: [Top 5 CAPTCHA Solving Services in 2026](https://hasdata.com/blog/captcha-solving)
+* **Full Analysis**: [Top 5 CAPTCHA Solving Services in 2026](https://hasdata.com/blog/captcha-solving?utm_source=github&utm_medium=syndication&utm_campaign=captcha-solving)
 * **Discord Community**: [Join HasData](https://hasdata.com/join-discord)
 * **Star this repo if helpful** ⭐
