@@ -1,15 +1,16 @@
-![Python](https://img.shields.io/badge/python-3.11+-blue)
-![Playwright](https://img.shields.io/badge/Playwright-Automation-green)
-
 # CAPTCHA Solving Services Benchmark
 
-[![HasData_banner](banner.png)](https://hasdata.com/)
+![Python 3.11 or newer badge](https://img.shields.io/badge/python-3.11+-blue) ![Playwright automation badge](https://img.shields.io/badge/Playwright-Automation-green)
+
+[![HasData, the company that ran the benchmark](banner.png)](https://hasdata.com/)
 
 Benchmarking scripts for testing **5 popular CAPTCHA solving services** across **6 CAPTCHA types**. Each script runs 50 iterations to measure solve time and success rate.
 
 This repo is a companion to our full analysis: **[Top 5 CAPTCHA Solving Services in 2026](https://hasdata.com/blog/captcha-solving)** - see the article for detailed results, performance comparisons, and recommendations.
 
 ## Services Tested
+
+Each service gets its own folder with identical scripts.
 
 | Service | Python SDK |
 |---------|-----------|
@@ -18,6 +19,8 @@ This repo is a companion to our full analysis: **[Top 5 CAPTCHA Solving Services
 | **CapMonster** | `capmonstercloudclient` |
 | **DeathByCaptcha** | `deathbycaptcha` |
 | **SolveCaptcha** | - |
+
+SolveCaptcha runs over plain HTTP, no SDK involved.
 
 ## CAPTCHA Types
 
@@ -29,6 +32,8 @@ This repo is a companion to our full analysis: **[Top 5 CAPTCHA Solving Services
 - **GeeTest v4**. Slide, Icon, Gobang, IconCrush
 
 ## Project Structure
+
+Five folders, one per vendor.
 
 ```
 captcha-solver-benchmark/
@@ -53,16 +58,22 @@ Each folder contains identical scripts adapted for that service's API.
 
 ## Installation
 
+Three steps and the key.
+
 ### 1. Clone the repository
+
+Standard clone, nothing global.
 
 ```bash
 git clone https://github.com/your-username/captcha-solver-benchmark.git
 cd captcha-solver-benchmark
 ```
 
+Everything runs from the repo root.
+
 ### 2. Install dependencies
 
-Choose the service you want to test:
+Pick the service you want to test and add its SDK from the table above.
 
 **2Captcha**
 ```bash
@@ -94,6 +105,8 @@ pip install requests playwright
 playwright install
 ```
 
+Playwright drives the pages that host the live challenges.
+
 ### 3. Add your API key
 
 Edit the script you want to run and replace:
@@ -101,6 +114,8 @@ Edit the script you want to run and replace:
 ```python
 API_KEY = "YOUR-API-KEY"
 ```
+
+Every vendor issues the key on sign-up.
 
 ## Usage
 
@@ -137,17 +152,19 @@ All scripts run **50 iterations** by default. Adjust the range in the loop:
 for i in range(1, 50):  # Change 50 to your desired number
 ```
 
+Fifty attempts keep the success rates stable between runs.
+
 ## Results
 
-Scripts output timing and success data to text files:
+Scripts write timing and success data to text files, one line per attempt:
 
 ```
-1. Success — 2.34 sec
-2. Success — 1.89 sec
-3. Error: timeout — 15.00 sec
+1. Success, 2.34 sec
+2. Success, 1.89 sec
+3. Error: timeout, 15.00 sec
 ```
 
-For full benchmark results and analysis, see the article: **[Top 5 CAPTCHA Solving Services in 2026](https://hasdata.com/blog/captcha-solving)**
+The benchmark ran 50 iterations per service per type. CapMonster took Turnstile in 6.24 seconds where 2Captcha needed 16.96, the same CapMonster managed 14% accuracy on legacy image CAPTCHAs, and SolveCaptcha hit 94% on Invisible reCAPTCHA. The full tables live in **[Top 5 CAPTCHA Solving Services in 2026](https://hasdata.com/blog/captcha-solving)**.
 
 ## Disclaimer
 
