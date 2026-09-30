@@ -54,7 +54,7 @@ async def main():
         page = await browser.new_page()
 
         with open("solvecaptcha_invisible_results.txt", "a", encoding="utf-8") as file:
-            for attempt in range(1, 50):
+            for attempt in range(1, 51):
                 await page.goto(URL)
                 start_time = time.perf_counter()
 

@@ -18,7 +18,7 @@ client = deathbycaptcha.HttpClient(DBC_USERNAME, DBC_PASSWORD)
 correct_count = 0
 
 with open("dbc_image_results.txt", "w", encoding="utf-8") as file:
-    for i in range(1, 50):
+    for i in range(1, 51):
         start_time = time.perf_counter()
 
         try:

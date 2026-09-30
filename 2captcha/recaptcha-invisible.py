@@ -14,7 +14,7 @@ with sync_playwright() as p:
     page = browser.new_page()
 
     with open("results/recaptcha_invisible.txt", "w", encoding="utf-8") as file:
-        for i in range(1, 50):
+        for i in range(1, 51):
             page.goto(URL)
             start_time = time.perf_counter()
 

@@ -80,7 +80,7 @@ with sync_playwright() as p:
             file.write(f"\n=== {captcha['name']} ===\n")
             file.flush()
 
-            for i in range(1, 50):
+            for i in range(1, 51):
                 try:
                     page.goto(URL, wait_until="domcontentloaded", timeout=60000)
                     page.wait_for_timeout(5000)

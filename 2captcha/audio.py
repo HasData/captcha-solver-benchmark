@@ -9,7 +9,7 @@ CORRECT_ANSWER = "r v six t e"
 solver = TwoCaptcha(API_KEY)
 
 with open("results/audio_results.txt", "a", encoding="utf-8") as file:
-    for i in range(1, 50):
+    for i in range(1, 51):
         start_time = time.perf_counter()
 
         try:

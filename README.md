@@ -4,7 +4,7 @@
 
 [![HasData, the company that ran the benchmark](banner.png)](https://hasdata.com/)
 
-Benchmarking scripts for testing **5 popular CAPTCHA solving services** across **6 CAPTCHA types**. Each script runs 49 attempts to measure solve time and success rate.
+Benchmarking scripts for testing **5 popular CAPTCHA solving services** across **6 CAPTCHA types**. Each script runs 50 attempts to measure solve time and success rate.
 
 This repo is a companion to our full analysis: **[Top 5 CAPTCHA Solving Services in 2026](https://hasdata.com/blog/captcha-solving)** - see the article for detailed results, performance comparisons, and recommendations.
 
@@ -146,10 +146,10 @@ Each script accepts these parameters (edit directly in the file):
 | `URL` | Target page URL |
 | `CORRECT_ANSWER` | Expected answer (for accuracy tracking) |
 
-All scripts run **49 attempts** by default, because `range(1, 50)` stops before 50. Adjust the range in the loop:
+All scripts run **50 attempts** by default. Adjust the range in the loop:
 
 ```python
-for i in range(1, 50):  # 49 attempts, raise 50 for more
+for i in range(1, 51):  # 50 attempts, the upper bound is N + 1
 ```
 
 Every attempt sends one solve request, so a longer loop costs more on each service.
@@ -164,7 +164,7 @@ Scripts write timing and success data to text files, one line per attempt:
 3. Error: timeout, 15.00 sec
 ```
 
-The benchmark ran 49 attempts per service per type. CapMonster took Turnstile in 6.24 seconds where 2Captcha needed 16.96, the same CapMonster managed 14% accuracy on legacy image CAPTCHAs, and SolveCaptcha hit 94% on Invisible reCAPTCHA. The full tables live in **[Top 5 CAPTCHA Solving Services in 2026](https://hasdata.com/blog/captcha-solving)**.
+The benchmark ran 50 attempts per service per type. CapMonster took Turnstile in 6.24 seconds where 2Captcha needed 16.96, the same CapMonster managed 14% accuracy on legacy image CAPTCHAs, and SolveCaptcha hit 94% on Invisible reCAPTCHA. The full tables live in **[Top 5 CAPTCHA Solving Services in 2026](https://hasdata.com/blog/captcha-solving)**.
 
 ## Disclaimer
 

@@ -38,7 +38,7 @@ async def main():
     correct_count = 0
 
     with open("capmonster_image_results.txt", "w", encoding="utf-8") as file:
-        for i in range(1, 50):
+        for i in range(1, 51):
             start = time.perf_counter()
 
             try:

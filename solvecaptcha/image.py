@@ -18,7 +18,7 @@ if os.path.getsize(IMAGE_FILE) < 100:
 correct_count = 0
 
 with open("solvecaptcha_image_results.txt", "a", encoding="utf-8") as file:
-    for i in range(1, 50):
+    for i in range(1, 51):
         start = time.perf_counter()
 
         try:

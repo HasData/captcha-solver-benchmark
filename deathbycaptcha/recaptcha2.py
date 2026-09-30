@@ -15,7 +15,7 @@ with sync_playwright() as p:
     client = deathbycaptcha.HttpClient(DBC_USERNAME, DBC_PASSWORD)
 
     with open("dbc_recaptcha_results.txt", "w", encoding="utf-8") as file:
-        for i in range(1, 50):
+        for i in range(1, 51):
             page.goto(URL)
             start_time = time.perf_counter()
 
